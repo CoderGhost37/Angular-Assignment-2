@@ -1,0 +1,75 @@
+<div class="container form-container">
+  <h1 class="title">Add Customer</h1>
+
+  <form (ngSubmit)="onSubmit(customerForm)" #customerForm="ngForm" class="form">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        name="name"
+        required
+        ngModel
+        #name="ngModel"
+      />
+      <div class="form-group-error" *ngIf="name.invalid && name.touched">
+        Name is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        required
+        ngModel
+        #email="ngModel"
+      />
+      <div class="form-group-error" *ngIf="email.invalid && email.touched">
+        Email is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input
+        type="number"
+        class="form-control"
+        id="phone"
+        name="phone"
+        required
+        ngModel
+        #phone="ngModel"
+        pattern="[0-9]{10}"
+        maxlength="10"
+      />
+      <div class="form-group-error" *ngIf="phone.invalid && phone.touched">
+        Phone is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input
+        type="text"
+        class="form-control"
+        id="address"
+        name="address"
+        required
+        ngModel
+        #address="ngModel"
+      />
+      <div class="form-group-error" *ngIf="address.invalid && address.touched">
+        Address is required
+      </div>
+    </div>
+    <button
+      type="submit"
+      class="btn btn-form"
+      [disabled]="!customerForm.form.valid"
+    >
+      Add Customer
+    </button>
+  </form>
+</div>
