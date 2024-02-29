@@ -34,6 +34,7 @@ export class CustomerListComponent implements OnInit, OnDestroy {
       }
     );
     this.customers = this.customerService.getCustomers();
+    console.log(this.userRole);
   }
 
   editCustomer(id: number) {

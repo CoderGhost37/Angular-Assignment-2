@@ -1,7 +1,7 @@
 <header class="navbar">
-  <nav class="">
+  <nav class="navbar-layout">
     <ul class="navbar-list">
-      <li class="navbar-list-item">
+      <li class="navbar-list-item" *ngIf="isAuthenticated">
         <a
           routerLink="/"
           routerLinkActive="active"
@@ -12,6 +12,8 @@
       <li class="navbar-list-item" *ngIf="isAuthenticated">
         <a routerLink="/add-customer" routerLinkActive="active">Add Customer</a>
       </li>
+    </ul>
+    <ul class="navbar-list">
       <li class="navbar-list-item" *ngIf="!isAuthenticated">
         <a routerLink="/auth" routerLinkActive="active">Login</a>
       </li>

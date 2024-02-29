@@ -12,6 +12,12 @@
     padding: 0;
 }
 
+.navbar-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .navbar-list-item {
     cursor: pointer;
     font-weight: 600;
